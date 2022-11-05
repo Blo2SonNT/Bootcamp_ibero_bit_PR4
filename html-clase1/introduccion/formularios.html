@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Campos en formularios</h1>
+    <form action="">
+        <div>
+            <label for="pepesutano">Nombre</label>
+            <input required type="text" id="pepesutano">
+        </div>
+        <div>
+            <label for="">Apellido</label>
+            <input required type="text" maxlength="5">
+        </div>
+        <div>
+            <label for="">Correo</label>
+            <input required type="email">
+        </div>
+        <div>
+            <label for="">Telefono</label>
+            <input required type="number" min="100" max="105">
+        </div>
+        <div>
+            <label for="">Fecha de nacimiento</label>
+            <input required type="date">
+        </div>
+        <div>
+            <label for="">Su mensaje</label>
+            <textarea required cols="50" rows="10"></textarea>
+        </div>
+        <div>
+            <label for="">Semana para la entrega</label>
+            <input required type="week">
+        </div>
+        <div>
+            <label for="">Acepta terminos y condiciones</label>
+            <input required type="checkbox">
+        </div>
+
+        <div>
+            <label for="">C.C</label>
+            <input required type="radio" name="tipo_doc"> <br>
+            <label for="">C.E</label>
+            <input required type="radio" name="tipo_doc"> <br>
+            <label for="">T.I</label>
+            <input required type="radio" name="tipo_doc"> <br>
+        </div>
+        <div>
+            <label for="">Su color favorito</label>
+            <input required type="color">
+        </div>
+        <div>
+            <label for="">Seleccione su archivo</label>
+            <input required type="file">
+        </div>
+        <div>
+            <label for="">Campo oculto</label>
+            <input required type="hidden">
+        </div>
+        <div>
+            <label for="">Volumen</label>
+            <input required value="100" type="range">
+        </div>
+        <div>
+            <label for="">Hora</label>
+            <input required type="time">
+        </div>
+
+        <div>
+            <label for="">Mis opciones</label>
+            <select>
+                <option disabled selected>Seleccione una...</option>
+                <option value="">opcion 1</option>
+                <option value="">opcion 2</option>
+                <option value="">opcion 3</option>
+                <option value="">opcion 4</option>
+                <optgroup>
+                    <option value="">asdasd</option>
+                    <option value="">asdasd</option>
+                    <option value="">asdasd</option>
+                </optgroup>
+            </select>
+        </div>
+        <button type="submit">Validar</button>
+    </form>
+</body>
+
+</html>
