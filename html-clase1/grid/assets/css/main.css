@@ -1,0 +1,52 @@
+.posicion {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    /* text-align: center; */
+    display: grid;
+    grid-template-columns: 200px 100px 100px;
+    grid-template-rows: 150px 200px 300px;
+    gap: 10px;
+    /* justify-items: center;
+    align-items: center; */
+    grid-template-areas: 'areaTitulo areaTitulo areaTitulo' 'noticia1 noticia2  areaDashboard';
+}
+
+.caja1 {
+    background-color: aqua;
+    grid-area: areaTitulo;
+}
+
+.caja2 {
+    background-color: rgb(136, 127, 255);
+    grid-area: noticia1;
+}
+
+.caja3 {
+    background-color: blue;
+    grid-area: areaDashboard;
+}
+
+.caja4 {
+    background-color: chartreuse;
+    grid-area: noticia2;
+}
+
+.caja5 {
+    background-color: crimson;
+}
+
+.caja6 {
+    background-color: darkkhaki;
+}
+
+.caja7 {
+    background-color: darkolivegreen;
+}
+
+.caja8 {
+    background-color: fuchsia;
+    display: none;
+}

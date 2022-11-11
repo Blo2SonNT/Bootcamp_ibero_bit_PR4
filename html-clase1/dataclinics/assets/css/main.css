@@ -7,6 +7,15 @@
 
 .miNavbar {
     background: #19a1f0;
+    background-image: url(https://compote.slate.com/images/697b023b-64a5-49a0-8059-27b963453fb1.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* background-attachment: fixed; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 150px 0;
 }
 
 .estiloOpciones {
@@ -33,4 +42,13 @@
     white-space: nowrap;
     border: none;
     cursor: pointer;
+}
+
+.texto1 {
+    text-align: center;
+    margin: 5% 150px;
+}
+
+.imgSlider {
+    width: 100%;
 }
