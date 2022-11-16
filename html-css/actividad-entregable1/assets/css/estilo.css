@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.barraNavegacion {
+    background: #202020;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.barraNavegacion img {
+    width: 65px;
+    height: 26px;
+}
+
+.optNavbar {
+    display: flex;
+    list-style: none;
+    padding: 25px 0;
+}
+
+.optNavbar li {
+    padding: 0 8px;
+}
+
+.optNavbar li,
+.optNavbar li a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.fa-solid {
+    margin-right: 10px;
+}
+
+.especial {
+    margin-left: 10px;
+}
+
+.SecSlider {
+    margin: 60px 0;
+    width: 100%;
+    padding: 0 70px;
+}
+
+.SecSlider img {
+    width: 100%;
+}
+
+
+/* .SecSlider img {
+    margin: 60px 0;
+    width: 80%;
+} */
+
+.grilla {
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    gap: 35px;
+    padding: 0 50px;
+}
+
+.grilla div {
+    border: 1px solid rgb(202, 202, 202);
+    border-radius: 15px;
+}
+
+.grilla div img {
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.grilla div h5 {
+    padding: 15px;
+}
+
+.grilla div p {
+    padding: 15px 20px;
+}
+
+.noticias {
+    grid-row: 1/9;
+    grid-column: 3/4;
+}
+
+.noticias h6 {
+    width: 70%;
+}
+
+.imgNoticias {
+    width: 20% !important;
+    border-radius: 0 !important;
+}
+
+.noticiaDetalle {
+    display: flex;
+}
+
+footer {
+    height: 600px;
+    padding: 70px 30px;
+    background-image: url(https://img5.goodfon.com/wallpaper/nbig/6/2f/mstiteli-voina-beskonechnosti-avengers-infinity-war-komiks-1.jpg);
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    color: #fff;
+    padding: 20px;
+}
