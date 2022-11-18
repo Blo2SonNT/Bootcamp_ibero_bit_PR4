@@ -1,3 +1,15 @@
+.pepe {
+    width: 65px;
+}
+
 body {
-    background-color: aqua;
+    background-image: url(../img/avengers.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.listaRedes li {
+    background: transparent;
+    color: aliceblue;
 }
