@@ -1,0 +1,133 @@
+* {
+    font-family: Inter, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, Sans-Serif;
+}
+
+body {
+    background-color: #FAFAFA;
+}
+
+.instagramGeneral {
+    height: 90vh;
+}
+
+.btnLogin {
+    background: #0095F6;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 3px;
+    height: 30px;
+}
+
+.btnLogin:hover {
+    background: #50a6df;
+    color: #fff;
+}
+
+.cajas {
+    width: 350px;
+    border: 1px solid #dbdbdb;
+}
+
+.caja1 {
+    height: 400px;
+}
+
+.formLogin input {
+    font-size: 11px;
+    background-color: #FAFAFA;
+    padding: 9px 0 7px 8px;
+    border-radius: 3px;
+}
+
+.separadorBorde {
+    background: #dbdbdb;
+    width: 111px;
+    height: 2px;
+}
+
+.separador {
+    margin-top: 30px;
+}
+
+.separador :nth-child(2) {
+    transform: translateY(-13px);
+}
+
+.linkFacebook,
+.linkFacebook span {
+    color: #385185;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.linkFacebook i {
+    font-size: 18px;
+}
+
+.caja2 span,
+.caja2 a {
+    font-size: 13px;
+}
+
+.caja2 a {
+    font-weight: 600;
+    color: #0095f6;
+}
+
+.caja3 {
+    width: 350px;
+}
+
+.caja3 img {
+    height: 40px;
+}
+
+.caja3 p {
+    font-size: 13px;
+}
+
+
+/**********************  SLIDER  ************************************************/
+
+.fondoCelular {
+    background: url(../img/celular.png);
+}
+
+.imgOcultaSlider {
+    position: absolute;
+    left: 170px;
+    top: 84px;
+}
+
+.sliderInstagram {
+    position: relative;
+}
+
+.fixTamano {
+    max-width: fit-content;
+}
+
+
+/* @media (min-width: 992px) {} */
+
+
+/***************  FOOTER  ****************/
+
+.footerLinks {
+    list-style: none;
+}
+
+.footerLinks li {
+    padding: 0 8px;
+    font-size: 12px;
+}
+
+.divFooterIdiomas {
+    font-size: 12px;
+}
+
+.footerIdiomas {
+    background-color: transparent;
+    border: none;
+    width: 80px;
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/instagram.css">
+</head>
+
+<body>
+    <section class="container instagramGeneral d-flex justify-content-center align-items-center">
+        <div class="row">
+            <div class="col-6 d-none d-lg-block d-flex justify-content-end">
+                <img src="assets/img/celular.png" class="imgOcultaSlider" alt="">
+                <div id="carouselExampleFade" class="carousel slide carousel-fade w-100 " data-bs-ride="carousel">
+                    <div class="carousel-inner fixTamano  ">
+                        <div class="carousel-item active">
+                            <img src="assets/img/slider/1.png" class="d-block" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/img/slider/2.png" class="d-block" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/img/slider/3.png" class="d-block" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/img/slider/4.png" class="d-block" alt="...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-6">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="caja1 bg-white d-flex justify-content-center align-items-center flex-column">
+                            <img src="assets/img/instagram.png" class="w-25" alt="">
+                            <form class="formLogin">
+                                <input type="text" class="form-control" placeholder="Teléfono, usuario o correo electrónico">
+                                <input type="password" class="form-control" placeholder="Contraseña">
+                                <button class="btn btnLogin">asdasd</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="col-6">
+                <div class="caja1 cajas py-5 bg-white d-flex justify-content-center align-items-center flex-column">
+                    <img src="assets/img/instagram.png" class="w-50 pb-4" alt="">
+                    <form class="formLogin w-75">
+                        <input type="text" class="form-control mb-2" placeholder="Teléfono, usuario o correo electrónico">
+                        <input type="password" class="form-control" placeholder="Contraseña">
+                        <button type="button" class="btn btnLogin w-100 mt-3 fw-bold d-flex justify-content-center align-items-center">Iniciar
+                            sesión</button>
+                    </form>
+                    <section class="separador d-flex">
+                        <div class="separadorBorde"></div>
+                        <div class="px-3 d-flex justify-content-center align-items-center">o</div>
+                        <div class="separadorBorde"></div>
+                    </section>
+                    <section class="d-flex flex-column justify-content-center align-items-center">
+                        <a class="linkFacebook text-decoration-none" href="https://www.facebook.com/login.php?skip_api_login=1&api_key=124024574287414&kid_directed_site=0&app_id=124024574287414&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Foauth%3Fclient_id%3D124024574287414%26redirect_uri%3Dhttps%253A%252F%252Fwww.instagram.com%252Faccounts%252Fsignup%252F%26state%3D%257B%2522fbLoginKey%2522%253A%25227bpu5ln0ak20rp47lrr98qcgk1pwmb17phqapelrpsr155ito8%2522%252C%2522fbLoginReturnURL%2522%253A%2522%252Ffxcal%252Fdisclosure%252F%253Fnext%253D%25252F%2522%257D%26scope%3Demail%26response_type%3Dcode%252Cgranted_scopes%26locale%3Des_LA%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D23befa49-3f23-429d-a63e-0083d1f245a9%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fsignup%2F%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%2522fbLoginKey%2522%253A%25227bpu5ln0ak20rp47lrr98qcgk1pwmb17phqapelrpsr155ito8%2522%252C%2522fbLoginReturnURL%2522%253A%2522%252Ffxcal%252Fdisclosure%252F%253Fnext%253D%25252F%2522%257D%23_%3D_&display=page&locale=es_LA&pl_dbl=0">
+                            <i class="fa-brands fa-square-facebook"></i>
+                            <span>Iniciar sesión con Facebook</span>
+                        </a>
+                        <a class="linkFacebook pt-3 text-decoration-none" href="https://www.instagram.com/accounts/password/reset/">¿Olvidaste tu contraseña?</a>
+                    </section>
+                </div>
+                <div class="caja2 mt-2 cajas bg-white py-3 d-flex justify-content-center align-items-center">
+                    <span>¿No tienes una cuenta?</span><a class="ps-1 text-decoration-none" href="#">Regístrate</a>
+                </div>
+                <div class="caja3 d-flex justify-content-center align-items-center flex-column">
+                    <p class="text-center my-4">Descarga la app.</p>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <img src="assets/img/google-play.png" class="w-50" alt="">
+                        <img src="assets/img/microsoft.png" class="w-50" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <ul class="d-flex justify-content-center align-items-center flex-wrap footerLinks">
+            <li class="text-muted">Meta</li>
+            <li class="text-muted">Información</li>
+            <li class="text-muted">Blog</li>
+            <li class="text-muted">Empleo</li>
+            <li class="text-muted">Ayuda</li>
+            <li class="text-muted">API</li>
+            <li class="text-muted">Privacidad</li>
+            <li class="text-muted">Condiciones</li>
+            <li class="text-muted">Cuentas destacadas</li>
+            <li class="text-muted">Hashtags</li>
+            <li class="text-muted">Ubicaciones</li>
+            <li class="text-muted">Instagram Lite</li>
+            <li class="text-muted">Subir contactos y no usuarios</li>
+        </ul>
+        <div class="d-flex justify-content-center align-items-center divFooterIdiomas">
+            <select class="footerIdiomas text-muted">
+                <option value="af">Afrikaans</option>
+                <option value="cs">Čeština</option>
+                <option value="da">Dansk</option>
+                <option value="de">Deutsch</option>
+                <option value="el">Ελληνικά</option>
+                <option value="en">English</option>
+                <option value="en-gb">English (UK)</option>
+                <option value="es">Español (España)</option>
+                <option value="es-la">Español</option>
+                <option value="fi">Suomi</option>
+                <option value="fr">Français</option>
+                <option value="id">Bahasa Indonesia</option>
+                <option value="it">Italiano</option>
+                <option value="ja">日本語</option>
+                <option value="ko">한국어</option>
+                <option value="ms">Bahasa Melayu</option>
+                <option value="nb">Norsk</option>
+                <option value="nl">Nederlands</option>
+                <option value="pl">Polski</option>
+                <option value="pt-br">Português (Brasil)</option>
+                <option value="pt">Português (Portugal)</option>
+                <option value="ru">Русский</option>
+                <option value="sv">Svenska</option>
+                <option value="th">ภาษาไทย</option>
+                <option value="tl">Filipino</option>
+                <option value="tr">Türkçe</option>
+                <option value="zh-cn">中文(简体)</option>
+                <option value="zh-tw">中文(台灣)</option>
+                <option value="bn">বাংলা</option>
+                <option value="gu">ગુજરાતી</option>
+                <option value="hi">हिन्दी</option>
+                <option value="hr">Hrvatski</option>
+                <option value="hu">Magyar</option>
+                <option value="kn">ಕನ್ನಡ</option>
+                <option value="ml">മലയാളം</option>
+                <option value="mr">मराठी</option>
+                <option value="ne">नेपाली</option>
+                <option value="pa">ਪੰਜਾਬੀ</option>
+                <option value="si">සිංහල</option>
+                <option value="sk">Slovenčina</option>
+                <option value="ta">தமிழ்</option>
+                <option value="te">తెలుగు</option>
+                <option value="vi">Tiếng Việt</option>
+                <option value="zh-hk">中文(香港)</option>
+                <option value="bg">Български</option>
+                <option value="fr-ca">Français (Canada)</option>
+                <option value="ro">Română</option>
+                <option value="sr">Српски</option>
+                <option value="uk">Українська</option>
+            </select>
+            <span class="text-muted">&copy; 2022 Instagram from Meta</span>
+        </div>
+    </footer>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

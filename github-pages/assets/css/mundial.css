@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Marker+Hatch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+@font-face {
+    font-family: letraMiPollaQatar;
+    src: url(../fonts/Valley-River.ttf);
+}
+
+.img-banner {
+    width: 100%;
+    height: 300px;
+    background-image: url(../img/copa-main.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+}
+
+.sombra {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background: rgba(105, 105, 105, 0.486);
+}
+
+.sombra h1 {
+    font-family: 'Rubik Marker Hatch', cursive;
+    font-size: 4rem;
+}
+
+.letra-pagina {
+    font-family: letraMiPollaQatar;
+}
+
+.letra-menu {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+}
+
+.footer-texto {
+    transform: translateY(-35px);
+}
+
+.onda-arena {
+    transform: translateY(60px);
+}
