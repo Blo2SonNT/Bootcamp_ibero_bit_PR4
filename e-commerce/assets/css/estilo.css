@@ -1,0 +1,33 @@
+@font-face {
+    font-family: empanadaFont;
+    src: url(../fonts/Fruit-Days.ttf);
+}
+
+.vector-empanada {
+    filter: invert(1);
+}
+
+.titulo-header {
+    font-family: empanadaFont;
+    font-size: 5rem;
+}
+
+[data-manuel] {
+    height: 150px;
+}
+
+[data-manuel="hola"] {
+    background-color: aqua;
+}
+
+[data-manuel="adios"] {
+    background-color: rgb(255, 128, 0);
+}
+
+.btnProductoCarrito {
+    cursor: pointer;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: blanchedalmond;
+}

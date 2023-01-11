@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div class="d-flex">
+            <button class="btn btn-dark me-2" id="btnQuitar">Quitar</button>
+
+            <input type="number" readonly value="5" id="textCantidad">
+
+            <button class="btn btn-dark ms-2" id="btnAgregar">Agregar</button>
+
+        </div>
+        <button class="btn btn-danger" id="finCompra">Finalizar compra</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+    <script>
+        let botonQuitar = document.querySelector('#btnQuitar')
+
+        botonQuitar.addEventListener("click", () => {
+            accionCarrito('quitar')
+        })
+
+
+        let botonAgregar = document.getElementById('btnAgregar')
+        botonAgregar.addEventListener("click", () => {
+            accionCarrito('agregar')
+        })
+
+
+        function accionCarrito(accion) {
+            let inputCantidad = document.getElementById('textCantidad')
+            let cantidadActual = inputCantidad.value
+            if (cantidadActual > 0) {
+                if (accion == 'quitar') {
+                    inputCantidad.value = cantidadActual - 1
+                }
+            } else {
+                alert('papi... no se ponga pesado')
+            }
+            if (accion == 'agregar') {
+                inputCantidad.value = parseInt(cantidadActual) + 1
+            }
+
+        }
+
+        document.querySelector('#finCompra').addEventListener('click', () => {
+            let inputCantidad = document.getElementById('textCantidad')
+            if (inputCantidad.value == 1) {
+                confirm('Esta seguro que solo desea comprar una unica unidad? no tiene plata?')
+            } else {
+                alert('compra finalizada')
+            }
+        })
+    </script>
+
+</body>
+
+</html>
