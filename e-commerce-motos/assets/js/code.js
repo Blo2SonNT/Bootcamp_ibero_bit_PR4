@@ -73,5 +73,32 @@ for (const motico of motos) {
 
 
 function operacion(tipoOperacion) {
-    alert(tipoOperacion)
+    if (tipoOperacion == 'igual') {
+        let operacionCalculo = document.getElementById('pantalla-calculadora')
+        operacionCalculo.value = eval(operacionCalculo.value)
+    }
 }
+
+function operacion_usuario(numero) {
+    let inputCalculadora = document.getElementById('pantalla-calculadora')
+    if (numero === 'C') {
+        inputCalculadora.value = "0"
+    } else if (inputCalculadora.value === "0") {
+        if (numero == '.') {
+            inputCalculadora.value += numero
+        } else {
+            inputCalculadora.value = numero
+        }
+    } else {
+        inputCalculadora.value += numero
+    }
+}
+
+let nombre = "Marlon"
+
+
+function saludo(persona) {
+    alert("Hola " + persona)
+}
+
+saludo("Fulano")

@@ -27,6 +27,9 @@
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal">Calcular costos</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="carrita.html">Carrito</a>
+                    </li>
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -82,84 +85,84 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <input type="text" value="0" class="form-control">
+                    <input type="text" readonly value="0" class="form-control fs-2" id="pantalla-calculadora">
                     <hr>
                     <div class="row" id="botones-grilla">
                         <div class="col-6">
-                            <button class="my-2 btn btn-dark w-100">C</button>
+                            <button class="my-2 btn btn-dark w-100" onclick="operacion_usuario('C')">C</button>
                         </div>
                         <div class="col-6">
-                            <button class="my-2 btn btn-dark w-100" onclick="operacion('borrar')">
+                            <button class="my-2 btn btn-dark w-100">
                                 <i class="fa-solid fa-delete-left"></i>
                             </button>
                         </div>
                         <div class="col-3">
-                            <button class="my-2 btn btn-dark w-100">
+                            <button class="my-2 btn btn-dark w-100" onclick="operacion_usuario(7)">
                                 7
                             </button>
                         </div>
                         <div class="col-3">
-                            <button class="my-2 btn btn-dark w-100">
+                            <button class="my-2 btn btn-dark w-100" onclick="operacion_usuario(8)">
                                 8
                             </button>
                         </div>
                         <div class="col-3">
-                            <button class="my-2 btn btn-dark w-100">
+                            <button class="my-2 btn btn-dark w-100" onclick="operacion_usuario(9)">
                                 9
                             </button>
                         </div>
                         <div class="col-3">
-                            <button onclick="operacion('dividir')" class="my-2 btn btn-dark w-100">
+                            <button onclick="operacion_usuario('/')" class="my-2 btn btn-dark w-100">
                                 /
                             </button>
                         </div>
                         <div class="col-3">
-                            <button class="my-2 btn btn-dark w-100">
+                            <button class="my-2 btn btn-dark w-100" onclick="operacion_usuario(4)">
                                 4
                             </button>
                         </div>
                         <div class="col-3">
-                            <button class="my-2 btn btn-dark w-100">
+                            <button class="my-2 btn btn-dark w-100" onclick="operacion_usuario(5)">
                                 5
                             </button>
                         </div>
                         <div class="col-3">
-                            <button class="my-2 btn btn-dark w-100">
+                            <button class="my-2 btn btn-dark w-100" onclick="operacion_usuario(6)">
                                 6
                             </button>
                         </div>
                         <div class="col-3">
-                            <button onclick="operacion('multiplicar')" class="my-2 btn btn-dark w-100">
+                            <button onclick="operacion_usuario('x')" class="my-2 btn btn-dark w-100">
                                 X
                             </button>
                         </div>
                         <div class="col-3">
-                            <button class="my-2 btn btn-dark w-100">
+                            <button class="my-2 btn btn-dark w-100" onclick="operacion_usuario(1)">
                                 1
                             </button>
                         </div>
                         <div class="col-3">
-                            <button class="my-2 btn btn-dark w-100">
+                            <button class="my-2 btn btn-dark w-100" onclick="operacion_usuario(2)">
                                 2
                             </button>
                         </div>
                         <div class="col-3">
-                            <button class="my-2 btn btn-dark w-100">
+                            <button class="my-2 btn btn-dark w-100" onclick="operacion_usuario(3)">
                                 3
                             </button>
                         </div>
                         <div class="col-3">
-                            <button onclick="operacion('sumar')" class="my-2 btn btn-dark w-100">
+                            <button onclick="operacion_usuario('+')" class="my-2 btn btn-dark w-100">
                                 +
                             </button>
                         </div>
                         <div class="col-3">
-                            <button class="my-2 btn btn-dark w-100">
+                            <button class="my-2 btn btn-dark w-100" onclick="operacion_usuario(0)">
                                 0
                             </button>
                         </div>
                         <div class="col-3">
-                            <button class="my-2 btn btn-dark w-100">
+                            <button class="my-2 btn btn-dark w-100" onclick="operacion_usuario('.')">
                                 .
                             </button>
                         </div>
@@ -169,7 +172,7 @@
                             </button>
                         </div>
                         <div class="col-3">
-                            <button onclick="operacion('restar')" class="my-2 btn btn-dark w-100">
+                            <button onclick="operacion_usuario('-')" class="my-2 btn btn-dark w-100">
                                 -
                             </button>
                         </div>
