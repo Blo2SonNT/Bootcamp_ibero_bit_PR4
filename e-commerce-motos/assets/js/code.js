@@ -19,7 +19,7 @@ let divProductos = document.getElementById("grilla-motos")
 let motos = [{
         nombre: "GTX suski 256",
         imagen: "assets/img/moto1.png",
-        precio: 14000000
+        precio: 20.3
     },
     {
         nombre: "Susuko 890 ABS",

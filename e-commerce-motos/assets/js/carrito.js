@@ -24,7 +24,6 @@ function agregar() {
 
 function quitar() {
     let cantidadActual = document.getElementById("cantidad_2f")
-
     if (cantidadActual.value == 1) {
         alert("No se pueden quitar mas productos")
     } else {

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body>
+    <main class="container">
+        <input type="text" id="numero_sumatoria">
+        <button class="btn btn-dark" onclick="sumatoria()">Calcular</button>
+        <h1>La sumatoria total es: <span id="resultado"></span></h1>
+
+        <section>
+            <input type="radio" name="tipoDoc" id="pepe">CC
+            <input type="radio" name="tipoDoc" id="pepe">CE
+            <input type="radio" name="tipoDoc" id="">TI
+            <input type="radio" name="tipoDoc" id="">PASAPORTE
+            <button onclick="validarRadio()">Radio button</button>
+        </section>
+
+
+        <img class="w-25" onclick="cambioImagen()" data-imagen-ejemplo="https://www.eltiempo.com/files/image_640_428/uploads/2023/01/15/63c41a014967a.jpeg" src="https://phantom-marca.unidadeditorial.es/52107a07c3048512779de5538b72aa16/resize/1320/f/jpg/assets/multimedia/imagenes/2023/01/14/16736675341518.jpg"
+            alt="">
+
+        <img onclick="cambiarTodasLasImagenes()" class="w-25" data-imagen-ejemplo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Kaleidoscope_2.JPG/1200px-Kaleidoscope_2.JPG" src="https://resizing.flixster.com/FAgVXsPhsOHvTOj9A-4nTOUoaTw=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNmRiNjY5ZTYtYTYyNi00ODVjLWJhOGUtNmRiOGMxMWZkMjU3LmpwZw=="
+            alt="">
+
+
+
+
+
+
+        <input type="text" data-input="" value="pepe1">
+        <input type="text" data-input="" value="pepe2">
+        <input type="text" data-input="" value="pepe3">
+        <input type="text" data-input="" value="pepe4">
+        <input type="text" data-input="" value="pepe5">
+
+
+
+
+
+
+
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script>
+        function inputsData() {
+            let ejemplo = document.querySelectorAll('[data-input]')
+            console.log('file: ejercicio.html:56 ->  ejemplo', ejemplo)
+            ejemplo.forEach((inputPepe) => {
+                console.log(inputPepe.value)
+            });
+        }
+
+
+        function cambioImagen() {
+            let imagenHTML = document.querySelector('[data-imagen-ejemplo]')
+            let rutaNUeva = imagenHTML.dataset.imagenEjemplo
+            console.log(rutaNUeva)
+            imagenHTML.src = rutaNUeva
+        }
+
+
+        // let estudiantes = ["carmelo", "Juan", "Julian", "Marlon"]
+        // estudiantes.forEach((nombre, posicion) => {
+        //     console.log(`${nombre} -> ${posicion+1}`)
+        // });
+
+
+        function cambiarTodasLasImagenes() {
+            let imagenesActuales = document.querySelectorAll('.w-25')
+            console.log(imagenesActuales)
+            imagenesActuales.forEach((imagen, posicion) => {
+                let rutaNUeva = imagen.dataset.imagenEjemplo
+                imagenesActuales[posicion].src = rutaNUeva
+            });
+        }
+
+
+
+
+        function validarRadio() {
+            let opcionesRadio = document.querySelectorAll('input[name="tipoDoc"]');
+
+            if (opcionesRadio) {
+                console.error('seleccione una opcion')
+            }
+        }
+
+
+
+
+
+        function sumatoria() {
+            let valor_usuario = document.getElementById("numero_sumatoria").value
+            let resultado = 0
+            for (let i = 1; i <= valor_usuario; i++) {
+                resultado = i + resultado
+                console.log(resultado)
+            }
+            document.getElementById("resultado").innerText = resultado
+        }
+    </script>
+</body>
+
+</html>
