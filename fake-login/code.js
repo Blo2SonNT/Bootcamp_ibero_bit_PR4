@@ -10,9 +10,61 @@ function validarFormulario() {
 
 //guardando una variable en el localstorage
 function validarUsuarios(usuario, pass) {
-    console.log(usuario)
-    console.log(pass)
+    let usuarioValido = "correo@admin.com";
+    let passValido = "contraseña123"
+
+    if (usuario == usuarioValido) {
+        if (pass == passValido) {
+            sessionStorage.setItem("sesionIniciada", "true");
+        } else {
+            alert("Credenciales invalidas, intente de nuevo")
+        }
+    } else {
+        alert("Credenciales invalidas, intente de nuevo")
+    }
+    validarSesion()
 }
+
+function validarSesion() {
+    if (sessionStorage.getItem("sesionIniciada") != null) {
+        document.querySelector("#formulario").classList.add("d-none")
+        document.querySelector("#logout").classList.remove("d-none")
+    } else {
+        document.querySelector("#formulario").classList.remove("d-none")
+        document.querySelector("#logout").classList.add("d-none")
+    }
+}
+
+validarSesion()
+
+
+function cerrarSesion() {
+    sessionStorage.removeItem("sesionIniciada")
+    validarSesion()
+}
+
+let edad = parseInt(prompt("Cual es su edad?"))
+
+
+switch (edad) {
+    case 5:
+        alert("Usted es menor de edad")
+        break
+    case 18:
+        alert("Usted es bienvenido a esta pagina")
+        break
+    default:
+        alert("Ingrese la edad correspondiente")
+        break
+}
+
+
+
+
+
+
+
+
 
 function cambiarFondo(colorSeleccionado, opcionCambio) {
     document.querySelector("body").removeAttribute("style")
