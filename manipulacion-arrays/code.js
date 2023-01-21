@@ -65,14 +65,6 @@ personas.splice(personas.indexOf("Sara") + 1, 0, "Pepe", "Fulano")
 console.log(personas)
 
 
-
-
-
-
-
-
-
-
 // function validar() {
 //     let inputFormulario = document.querySelector("#inputPassword5")
 //     let inputFormulario2 = document.querySelector("#inputPassword6")
@@ -92,3 +84,149 @@ console.log(personas)
 //         divErrores.innerHTML += element + "<br>"
 //     });
 // }
+
+
+
+let miArray = []
+let productosCheck = []
+
+function agregarProducto() {
+    let productoNuevo = document.querySelector("#inputCompra")
+    if (miArray.indexOf(productoNuevo.value) == -1) {
+        miArray.push(productoNuevo.value)
+        console.log(miArray)
+        refrescarLista()
+        alerta("Producto agregado", "success", "#32d82f", false, "#0095f6", true, "rgba(83, 214, 47, 0.5)", "img/bmo.gif")
+    } else {
+        alerta("El producto ya se encuentra en la lista", "error", "#ed5555", false, "#0095f6")
+    }
+    productoNuevo.value = ''
+}
+
+function eliminarItem(posicionItem) {
+
+
+    Swal.fire({
+        title: 'Esta seguro?',
+        text: "Esta acción no podra ser reversible",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, eliminar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            miArray.splice(posicionItem, 1)
+            refrescarLista()
+            Swal.fire(
+                'Eliminado!',
+                'Este item fue retirado de la lista exitosamente',
+                'success'
+            )
+        }
+    })
+
+
+}
+
+function refrescarLista() {
+    document.querySelector("#lista").innerHTML = ""
+    miArray.forEach((item, posicion) => {
+        let claseTachado = ""
+        let botones = ""
+        if (productosCheck.indexOf(`${item}`) == -1) {
+            claseTachado = ''
+            botones = `
+                <button class="btn btn-success" onclick="checkItem(${posicion}, '${item}')">
+                    <i class="fa-solid fa-check"></i>
+                </button>
+                <button class="btn btn-danger" onclick="eliminarItem(${posicion})">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <button class="btn btn-warning" onclick="editarItem(${posicion})">
+                    <i class="fa-solid fa-pen"></i>
+                </button>
+            `
+        } else {
+            claseTachado = "text-decoration-line-through"
+            botones = `
+                <button class="btn btn-dark" onclick="destacharItem(${posicion},'${item}')">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                </button>
+            `
+        }
+        document.querySelector("#lista").innerHTML += `
+            <li class="list-group-item">
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="${claseTachado}" id="item${posicion}">${posicion+1}. ${item}</span>
+                    <div>
+                        ${botones}
+                    </div>
+                </div>
+            </li>
+        `
+    });
+}
+
+function checkItem(posicionItem, item) {
+    document.querySelector(`#item${posicionItem}`).classList.add('text-decoration-line-through')
+    productosCheck.push(item)
+    refrescarLista()
+}
+
+function destacharItem(posicionItem, item) {
+    document.querySelector(`#item${posicionItem}`).classList.remove('text-decoration-line-through')
+    productosCheck.splice(productosCheck.indexOf(item), 1)
+    refrescarLista()
+}
+
+function editarItem(posicionItem) {
+    let nuevoContenido = prompt("Cual es el nuevo texto?")
+    miArray[posicionItem] = nuevoContenido
+    refrescarLista()
+}
+
+function alerta(titulo, icono, colorIcono, eliminar = false, color, gif = false, fondo, urlGif = "") {
+
+    // let audioMp3 = new Audio("audio/que-bendicion.mp3")
+    // audioMp3.play()
+
+    let dataConfigAlerta = new Object()
+    dataConfigAlerta.title = titulo
+    dataConfigAlerta.icon = icono
+    dataConfigAlerta.iconColor = colorIcono
+    dataConfigAlerta.timer = 3000
+    dataConfigAlerta.timerProgressBar = true
+    dataConfigAlerta.showConfirmButton = false
+    dataConfigAlerta.color = color
+    if (gif) {
+        dataConfigAlerta.backdrop = `${fondo} url("${urlGif}") right bottom no-repeat`
+    }
+
+    console.log(dataConfigAlerta)
+
+
+    if (!eliminar) {
+        Swal.fire(dataConfigAlerta)
+    }
+
+
+
+
+}
+
+
+function traduccion(idiomaUsuario) {
+    let textos = [{
+        es: "Lista de Compras",
+        en: "Shopping List"
+    }]
+    let tituloPagina = document.querySelector("#TituloPagina")
+    for (const idioma of textos) {
+        if (idiomaUsuario == "ES") {
+            tituloPagina.innerHTML = idioma.es
+        } else if (idiomaUsuario == "EN") {
+            tituloPagina.innerHTML = idioma.en
+        }
+    }
+}
