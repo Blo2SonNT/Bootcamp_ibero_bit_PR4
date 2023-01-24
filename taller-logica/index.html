@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="accordion pt-5" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <b>Ejercicio 1</b>
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <input type="text" id="inputPunto1" placeholder="El numero para la sumatoria" class="w-50 form-control">
+                            <button class="btn btn-dark ms-2" onclick="sumatoria_punto_1()">Hacer sumatoria</button>
+                            <h5 class="fw-bold text-center ms-3" id="resultado_punto1"></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <b>Ejercicio 2</b>
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <input type="text" id="inputPunto2" class="form-control w-25">
+                            <button class="btn btn-dark ms-3" onclick="parImpar_punto2()">Par / impar</button>
+                            <h5 id="resultado_punto2" class="ms-3"></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <b>Ejercicio 3</b>
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="d-flex justify-content-center align-items-center flex-column">
+                            <input type="text" id="edadCliente" class="w-50 form-control my-2" placeholder="Ingrese la edad del cliente">
+                            <select id="optGenero" class="w-50 form-select">
+                                <option value="">Seleccione genero...</option>
+                                <option value="mujer">Mujer</option>
+                                <option value="hombre">Hombre</option>
+                            </select>
+                            <button class="btn btn-dark mt-3" onclick="pizzeria_punto3()">Validar Premios</button>
+                            <h5 id="resultado_punto3"></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        <b>Ejercicio 5</b>
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="d-flex justify-content-center align-items-center flex-column">
+                            <input type="text" id="numeroTabla" class="w-50 form-control my-2" placeholder="Ingrese el numero de la tabla que desea">
+                            <input type="text" id="numeroMaximoTabla" class="w-50 form-control my-2" placeholder="Ingrese el numero maximo de la tabla">
+                            <button class="btn btn-dark mt-3" onclick="multiplicacion_punto5()">Generar</button>
+                            <h5 class="mt-3" id="resultado_punto5"></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        <b>Ejercicio 6</b>
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="d-flex justify-content-center align-items-center flex-column">
+                            <input type="text" id="promedioEstudiante" class="w-50 form-control my-2" placeholder="Ingrese su promedio">
+                            <button class="btn btn-dark mt-3" onclick="matricula_punto6()">Validar</button>
+                            <h5 class="mt-3" id="resultado_punto6"></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        <b>Ejercicio 4</b>
+                    </button>
+                </h2>
+                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <ul class="list-group" id="menuPunto4"></ul>
+                        <div class="d-flex justify-content-center align-items-center flex-column">
+                            <input type="text" id="platoUsuario" class="w-50 form-control my-2" placeholder="Ingrese su pedido">
+                            <button class="btn btn-dark mt-3" onclick="restaurante_punto4()">Solicitar</button>
+                            <h5 class="mt-3" id="resultado_punto4"></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="code.js"></script>
+</body>
+
+</html>
