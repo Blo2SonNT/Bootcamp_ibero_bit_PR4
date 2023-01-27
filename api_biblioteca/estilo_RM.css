@@ -1,0 +1,25 @@
+:root {
+    --color-verde: #2dc63a;
+    --color-rojo: #ff1111;
+    --color-gris: #6c6c6c;
+    --color-azul: #0bcfd6;
+}
+
+.muerto {
+    border-top: 10px var(--color-rojo) solid;
+}
+
+.vivo {
+    border-top: 10px var(--color-verde) solid;
+}
+
+.desconocido {
+    border-top: 10px var(--color-gris) solid;
+}
+
+.puntoEspicifico {
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-azul);
+    border-radius: 50%;
+}

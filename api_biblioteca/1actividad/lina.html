@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header id="infoApiLibros"></header>
+    <script>
+        let URLAPI2 = "https://openlibrary.org/works/OL45804W/editions.json"
+        let consumoPepe = fetch(URLAPI2)
+            .then(respuesta => respuesta.json())
+            .then(info => {
+                // info.entries.forEach(libro => {
+                //     console.log(libro)
+                //     document.querySelector("#infoApiLibros").innerHTML += `
+                //         <h1>${libro.title}</h1>
+                //     `
+                // });
+                for (const libro of info.entries) {
+                    console.log(libro)
+                    let lengua = "No tiene"
+                    if (libro.languages != null) {
+                        libro.languages.forEach(lengiaje => {
+                            lengua = lengiaje.key
+                        });
+                    }
+                    document.querySelector("#infoApiLibros").innerHTML += `
+                        <h1>${libro.title}</h1>
+                        <h6>${lengua}</h6>
+                    `
+                }
+            })
+    </script>
+</body>
+
+</html>

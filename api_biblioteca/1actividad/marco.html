@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="cervezas"></div>
+
+    <script>
+        let urlApi = "https://api.openbrewerydb.org/breweries"
+        let consump = fetch(urlApi)
+            .then(res => res.json())
+            .then(infoCerveceria => {
+                for (const producto of infoCerveceria) {
+                    // let linkCerveza = ""
+                    // if (producto.website_url != null) {
+                    //     linkCerveza = producto.website_url
+                    // } else {
+                    //     linkCerveza = "#"
+                    // }
+                    let linkCerveza = (producto.website_url != null) ? producto.website_url : "#";
+                    document.querySelector("#cervezas").innerHTML += `
+                        <h1>${producto.name}</h1>
+                        <ul>
+                            <li>${producto.city}</li>    
+                            <li>${producto.state}</li>    
+                            <li>${producto.country}</li>    
+                            <li>
+                                <a href="${linkCerveza}">Visite el fabricante</a>    
+                            </li>    
+                        </ul>
+                    `
+                }
+            })
+    </script>
+</body>
+
+</html>
