@@ -6,21 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>API RICK AND MORTY</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="estilo_RM.css">
+    <link rel="stylesheet" href="assets/css/estilo_RM.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 
 <body>
-    <div class="container">
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a class="navbar-brand">
+                    <img src="assets/img/logo.png" class="w-25" alt="">
+                </a>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" id="inputSearch" type="search" placeholder="Search" aria-label="Search">
+                    <select id="generoPersonaje" class="form-select">
+                        <option value="">Genero</option>
+                        <option value="female">Mujer</option>
+                        <option value="male">Hombre</option>
+                        <option value="genderless">Sin genero</option>
+                        <option value="unknown">Desconocido</option>
+                    </select>
+                    <button class="btn btn-warning fw-bold" type="button" id="btnBusqueda">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
         <div class="row row-cols-2 row-cols-md-4 g-4" id="dataInfo"></div>
         <section id="botonesPages" class="d-flex justify-content-between align-items-center my-5"></section>
     </div>
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script>
         function consumoAPI_RM(urlApi = "https://rickandmortyapi.com/api/character") {
             let consumo = fetch(urlApi)
             consumo.then(res => res.json())
                 .then(infoApi => {
+                    if (infoApi.error != null) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Su filtro no es valido... vease la serio',
+                        })
+                        return
+                    }
                     document.querySelector("#dataInfo").innerHTML = ""
                     infoApi.results.forEach(personaje => {
 
@@ -100,6 +130,53 @@
                     }
                 })
         }
+
+        // document.querySelector("#btnBusqueda").addEventListener("click", () => {
+        //     let urlBaseApi = "https://rickandmortyapi.com/api/character/"
+        //     let filtroUsuario = document.querySelector("#inputSearch").value
+        //     if (filtroUsuario != "") {
+        //         urlBaseApi += `?name=${filtroUsuario}`
+        //         console.log(urlBaseApi)
+        //         consumoAPI_RM(urlBaseApi)
+        //     } else {
+        //         Swal.fire({
+        //             icon: 'error',
+        //             title: 'Su filtro no es valido... aprenda a escribir',
+        //         })
+        //     }
+
+        // })
+
+
+
+        document.querySelector("#btnBusqueda").addEventListener("click", () => {
+            let urlBaseApi = "https://rickandmortyapi.com/api/character/?"
+            let filtroUsuario = document.querySelector("#inputSearch").value
+            let generoUsuario = document.querySelector("#generoPersonaje").value
+
+            let filtroName = (filtroUsuario != "") ? `name=${filtroUsuario}&` : ""
+            let filtroGender = (generoUsuario != "") ? `gender=${generoUsuario}&` : ""
+
+            let urlCompleta = urlBaseApi + filtroName + filtroGender
+
+
+            urlCompleta = urlCompleta.slice(0, urlCompleta.length - 1)
+                // console.log('file: rick_morty.html:157 ->  urlCompleta', urlCompleta)
+            consumoAPI_RM(urlCompleta)
+                // let x = urlCompleta.indexOf("&")
+                // let arrayPosiciones = []
+
+            // for (let index = 0; index < urlCompleta.length; index++) {
+            //     if (urlCompleta[index] == "&") {
+            //         arrayPosiciones.push(index)
+            //     }
+            // }
+            // urlCompleta = urlCompleta.split("")
+            // console.log(urlCompleta.splice(arrayPosiciones.length - 1), 1)
+
+            // consumoAPI_RM(urlCompleta.pop())
+
+        })
     </script>
 </body>
 

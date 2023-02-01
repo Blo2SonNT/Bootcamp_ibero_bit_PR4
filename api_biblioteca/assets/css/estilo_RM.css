@@ -23,3 +23,8 @@
     background-color: var(--color-azul);
     border-radius: 50%;
 }
+
+#inputSearch,
+#generoPersona {
+    width: 250px !important
+}
