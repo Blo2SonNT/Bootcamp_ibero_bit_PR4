@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class RegistroComponent  {
     registroForm:FormGroup
     regexNumero = /^[0-9]+$/;
-    regexCorreo = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[gmail]{2,63}$/i
+    regexCorreo = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i
 
     constructor(private fb: FormBuilder){
         this.registroForm = this.fb.group({
