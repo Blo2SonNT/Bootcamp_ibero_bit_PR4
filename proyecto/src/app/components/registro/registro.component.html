@@ -1,0 +1,48 @@
+<div class="container pb-5">
+    <img src="assets/img/banner1.jpg" class="w-100 my-4" alt="">
+    <h1 class="my-5 text-center">Crear una cuenta</h1>
+    <form class="row g-3" [formGroup]="registroForm" (ngSubmit)="enviarInformacion()">
+        <div class="col-md-6">
+            <label for="correo" class="form-label">Ingrese su correo</label>
+            <input formControlName="correo" type="email" class="form-control" id="correo">
+            <span *ngIf="registroForm.get('correo')?.hasError('required') && registroForm.get('correo')?.touched" class="fw-bold text-danger">Correo invalido</span>
+            <span *ngIf="registroForm.get('correo')?.hasError('pattern') && registroForm.get('correo')?.touched">El correo ingresado no es valido</span>
+        </div>
+        <div class="col-md-6">
+            <label for="pass1" class="form-label">Ingrese una contraseña</label>
+            <input formControlName="pass1" type="password" class="form-control" id="pass1">
+            <span class="fw-bold text-danger">Contraseña invalida</span>
+        </div>
+        <div class="col-md-6">
+            <label for="pass2" class="form-label">Confirme su contraseña</label>
+            <input formControlName="pass2" type="password" class="form-control" id="pass2">
+            <span class="fw-bold text-danger">Contraseña invalida</span>
+        </div>
+        <div class="col-6">
+            <label for="direccion" class="form-label">Ingrese su dirección</label>
+            <input formControlName="direccion" type="text" class="form-control" id="direccion">
+            <span class="fw-bold text-danger">Dirección invalida</span>
+        </div>
+        <div class="col-6">
+            <label for="telefono" class="form-label">Ingrese su teléfono</label>
+            <input formControlName="telefono" type="text" class="form-control" id="telefono">
+            <span class="fw-bold text-danger">Teléfono invalido</span>
+        </div>
+        <div class="col-md-6">
+            <label for="ciudad" class="form-label">Seleccione su ciudad</label>
+            <select formControlName="ciudad" id="ciudad" class="form-select">
+                <option value="" selected disabled>Seleccione una...</option>
+                <option value="Bogota">Bogota</option>
+                <option value="Cali">Cali</option>
+                <option value="Tulua">Tulua</option>
+                <option value="Aguas calientes">Awas calientes</option>
+            </select>
+            <span class="fw-bold text-danger">Ciudad invalida</span>
+        </div>
+        <div class="col-12">
+            <div class="d-flex justify-content-center align-items-center">
+                <button type="submit" class="btn btn-dark fw-bold">Registrarme</button>
+            </div>
+        </div>
+    </form>
+</div>

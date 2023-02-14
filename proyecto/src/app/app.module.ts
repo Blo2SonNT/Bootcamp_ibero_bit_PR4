@@ -11,6 +11,7 @@ import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RegistroComponent } from './components/registro/registro.component';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
         CarritoComponent,
         CatalogoComponent,
         NotFoundComponent,
-        FooterComponent
+        FooterComponent,
+        RegistroComponent
     ],
     imports: [
         BrowserModule,
