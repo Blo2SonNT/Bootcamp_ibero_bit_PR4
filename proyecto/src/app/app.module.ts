@@ -12,6 +12,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegistroComponent } from './components/registro/registro.component';
+import { HttpClientModule } from "@angular/common/http";
+
 
 @NgModule({
     declarations: [
@@ -28,7 +30,8 @@ import { RegistroComponent } from './components/registro/registro.component';
     imports: [
         BrowserModule,
         AppRoutingModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HttpClientModule
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -1,10 +1,10 @@
 const express = require('express');
 const conectarBD = require('./config/db')
-
+const cors = require('cors')
 
 let app = express();
 conectarBD();
-
+app.use(cors())
 app.use(express.json())
 
 app.use('/api', require('./routes/routes'))

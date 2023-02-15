@@ -10,14 +10,19 @@
                 <div class="form-floating mb-3">
                     <input type="text" formControlName="nombre" class="form-control" id="floatingInput">
                     <label for="floatingInput">Nombres</label>
+                    <span *ngIf="formContacto.get('nombre')?.hasError('required') && formContacto.get('nombre')?.touched" class="fw-bold text-danger">Nombre invalido</span>
+
                 </div>
                 <div class="form-floating mb-3">
                     <input type="email" formControlName="correo" class="form-control" id="floatingPassword">
                     <label for="floatingPassword">Correo</label>
+                    <span *ngIf="formContacto.get('correo')?.hasError('required') && formContacto.get('correo')?.touched" class="fw-bold text-danger">Correo invalido</span>
+                    <span *ngIf="formContacto.get('correo')?.hasError('pattern') && formContacto.get('correo')?.touched" class="fw-bold text-danger">La estructura del correo es invalida</span>
                 </div>
                 <div class="form-floating mb-3">
                     <input type="text" formControlName="telefono" class="form-control" id="floatingPassword">
-                    <label for="floatingPassword">Telefono</label>
+                    <label for="floatingPassword">Teléfono</label>
+                    <span *ngIf="formContacto.get('telefono')?.hasError('required') && formContacto.get('telefono')?.touched" class="fw-bold text-danger">Teléfono invalido</span>
                 </div>
                 <div class="form-floating mb-3">
                     <select class="form-select" id="floatingSelect" formControlName="ciudad">
@@ -28,10 +33,12 @@
                         <option value="Barranquilla">Barranquilla</option>
                     </select>
                     <label for="floatingSelect">Ciudad</label>
+                    <span *ngIf="formContacto.get('ciudad')?.hasError('required') && formContacto.get('ciudad')?.touched" class="fw-bold text-danger">Seleccione la opción deseada</span>
                 </div>
                 <div class="form-floating mb-3">
                     <textarea class="form-control" formControlName="mensaje" id="floatingTextarea2" style="height: 100px"></textarea>
-                    <label for="floatingTextarea2">Dejanos tu mensaje</label>
+                    <label for="floatingTextarea2">Déjanos tu mensaje</label>
+                    <span *ngIf="formContacto.get('mensaje')?.hasError('required') && formContacto.get('mensaje')?.touched" class="fw-bold text-danger">Déjanos saber que quieres</span>
                 </div>
                 <div class="d-flex justify-content-center align-items-center">
                     <button type="submit">
