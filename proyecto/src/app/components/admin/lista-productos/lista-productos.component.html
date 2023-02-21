@@ -1,0 +1,31 @@
+<app-menu-lateral></app-menu-lateral>
+<section class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col" class="text-center">Imagen</th>
+                <th scope="col" class="text-center">Nombre</th>
+                <th scope="col" class="text-center">Precio</th>
+                <th scope="col" class="text-center">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let producto of listaProductos">
+                <td>
+                    <img src="{{producto.rutaImg}}" class="w-50" alt="">
+                </td>
+                <td>
+                    <h5>{{ producto.nombre }}</h5>
+                </td>
+                <td>{{ producto.precio | currency: '$ ' }}</td>
+
+                <td>
+                    <button class="btn btn-info mx-3"><i class="fa-solid fa-pen"></i></button>
+                    <button class="btn btn-danger mx-3" (click)="eliminarProducto(producto._id)">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

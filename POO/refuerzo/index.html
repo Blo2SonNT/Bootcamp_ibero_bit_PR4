@@ -1,0 +1,74 @@
+<script>
+    class Vehiculo {
+        color
+        motor
+        marca
+
+        constructor(color, motor, marca) {
+            this.color = color
+            this.motor = motor
+            this.marca = marca
+        }
+
+
+        obtenerColor() {
+            return `El color es ${this.color}`
+        }
+
+        obtenerMarca() {
+            return `La marca del vehiculo es ${this.marca}`
+        }
+
+    }
+
+    let classVehiculo1 = new Vehiculo("Verde", "4.5", "Jeep")
+    let classVehiculo2 = new Vehiculo("Azul", "1.2", "Renault")
+
+    console.log('Del vehiculo 1:' + classVehiculo1.obtenerColor())
+    console.log('Del vehiculo 1:' + classVehiculo1.obtenerMarca())
+    console.log('Del vehiculo 2:' + classVehiculo2.obtenerColor())
+    console.log('Del vehiculo 2:' + classVehiculo2.obtenerMarca())
+
+    class Moto extends Vehiculo {
+        modelo
+
+        constructor(modelo, color, motor, marca) {
+            super(color, motor, marca)
+            this.modelo = modelo
+        }
+
+        obtenerColor() {
+            return `${super.obtenerColor()} ////  El color de la moto es: ${this.color}`
+        }
+
+        manejarMoto() {
+            return `Huy me estrelle`
+        }
+    }
+
+    let classMoto = new Moto(2023, "negra", "250", "suzuki")
+    console.log(classMoto.obtenerColor())
+    console.log(classMoto.manejarMoto())
+    console.log(classMoto.modelo)
+
+
+
+
+    //ENCAPSULAMIENTO
+
+
+    function triangulo(cateto1, cateto2) {
+        function hipotenusa(C1, C2) {
+            let cateto = Math.pow(C1, 2) + Math.pow(C2, 2)
+            let calculoH = Math.sqrt(cateto)
+            return calculoH
+        }
+        this.teorema = hipotenusa(cateto1, cateto2)
+    }
+
+    let x = new triangulo(3, 4)
+
+    console.log(x.teorema)
+</script>
+
+color, motor, marca

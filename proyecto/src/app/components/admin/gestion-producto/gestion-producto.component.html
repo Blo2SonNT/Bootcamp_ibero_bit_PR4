@@ -1,0 +1,38 @@
+<app-menu-lateral></app-menu-lateral>
+<section class="container">
+    <h1 class="my-5 text-center">{{ tituloComponente }} Producto </h1>
+    <form [formGroup]="productoForm" (ngSubmit)="enviarInformacion()">
+        <div class="form-floating mb-3 ">
+            <input type="text" class="form-control" id="nombre" formControlName="nombre">
+            <label for="nombre">Nombre</label>
+            <span *ngIf="productoForm.get('nombre')?.hasError('required') && productoForm.get('nombre')?.touched" class="text-danger fw-bold">Digite su nombre</span>
+        </div>
+        <div class="form-floating mb-3 ">
+            <input type="text" class="form-control" id="precio" formControlName="precio">
+            <label for="precio">Precio</label>
+            <span *ngIf="productoForm.get('precio')?.hasError('required') && productoForm.get('precio')?.touched" class="text-danger fw-bold">Digite el precio</span>
+            <span *ngIf="productoForm.get('precio')?.hasError('minlength') && productoForm.get('precio')?.touched" class="text-danger fw-bold">El precio debe de contener mínimo 3 caracteres</span>
+            <span *ngIf="productoForm.get('precio')?.hasError('pattern') && productoForm.get('precio')?.touched" class="text-danger fw-bold">&nbsp;El precio no puede contener letras</span>
+        </div>
+        <div class="form-floating mb-3 ">
+            <input type="text" class="form-control" id="rutaImg" formControlName="rutaImg">
+            <label for="rutaImg">Ruta de imagen</label>
+            <span *ngIf="productoForm.get('rutaImg')?.hasError('required') && productoForm.get('rutaImg')?.touched" class="text-danger fw-bold">Digite la ruta de la imagen del producto</span>
+        </div>
+        <div class="d-flex justify-content-center align-items-center my-4">
+            <button [disabled]="productoForm.invalid" type="submit">
+                <div class="svg-wrapper-1">
+                    <div class="svg-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="none" d="M0 0h24v24H0z"></path>
+                            <path fill="currentColor"
+                                d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+                <span>Enviar</span>
+            </button>
+        </div>
+    </form>
+</section>

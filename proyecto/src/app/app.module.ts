@@ -13,6 +13,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegistroComponent } from './components/registro/registro.component';
 import { HttpClientModule } from "@angular/common/http";
+import { GestionProductoComponent } from './components/admin/gestion-producto/gestion-producto.component';
+import { AdminUsersComponent } from './components/admin/admin-users/admin-users.component';
+import { MenuLateralComponent } from './components/admin/menu-lateral/menu-lateral.component';
+import { ListaProductosComponent } from './components/admin/lista-productos/lista-productos.component';
 
 
 @NgModule({
@@ -25,12 +29,16 @@ import { HttpClientModule } from "@angular/common/http";
         CatalogoComponent,
         NotFoundComponent,
         FooterComponent,
-        RegistroComponent
+        RegistroComponent,
+        GestionProductoComponent,
+        AdminUsersComponent,
+        MenuLateralComponent,
+        ListaProductosComponent,
     ],
     imports: [
+        ReactiveFormsModule,
         BrowserModule,
         AppRoutingModule,
-        ReactiveFormsModule,
         HttpClientModule
     ],
     providers: [],
