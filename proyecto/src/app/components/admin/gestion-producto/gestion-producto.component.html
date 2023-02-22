@@ -1,6 +1,7 @@
 <app-menu-lateral></app-menu-lateral>
 <section class="container">
     <h1 class="my-5 text-center">{{ tituloComponente }} Producto </h1>
+    <p routerLink="/admin/lista-productos" class="text-primary pb-2">Regresar al listado de productos</p>
     <form [formGroup]="productoForm" (ngSubmit)="enviarInformacion()">
         <div class="form-floating mb-3 ">
             <input type="text" class="form-control" id="nombre" formControlName="nombre">

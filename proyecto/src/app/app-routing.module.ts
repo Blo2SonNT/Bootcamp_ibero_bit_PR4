@@ -14,6 +14,7 @@ const routes: Routes = [
     { path: 'contactenos', component: ContactoComponent },
     { path: 'productos', component: CatalogoComponent },
     { path: 'admin/productos', component: GestionProductoComponent },
+    { path: 'admin/editar-producto/:id', component:GestionProductoComponent },
     { path: 'admin/lista-productos', component: ListaProductosComponent },
     { path: '404', component: NotFoundComponent },
     { path: 'registro', component: RegistroComponent },
